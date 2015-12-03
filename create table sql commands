@@ -1,0 +1,76 @@
+CREATE TABLE venues (
+    name                            text,  -- primary key 
+    votes                             int,
+    visits                             int,  
+    street_address            text,
+    neighborhood             text,
+    date_added                date
+);
+
+CREATE TABLE best_lists (
+    name                            text,    -- primary key 
+    attribute_name_1       int,
+    attribute_name_2       int,  
+    attribute_name_3       int,
+    attribute_name_4       int,
+    attribute_name_5       int,
+    attribute_name_6       int,
+    attribute_name_7       int,
+    attribute_name_8       int,
+    attribute_name_9       int,
+    attribute_name_10     int,
+    attribute_name_11     int,
+    attribute_name_12     int,
+    attribute_name_13     int,
+    attribute_name_14     int,
+    attribute_name_15     int,
+    attribute_name_16     int,
+    attribute_name_17     int,
+    attribute_name_18     int,
+    attribute_name_19     int,
+    attribute_name_20     int,
+    attribute_name_21     int,
+    attribute_name_22     int,
+    attribute_name_23     int,
+    attribute_name_24     int,
+    attribute_name_25     int,
+    attribute_name_26     int,
+    attribute_name_27     int,
+    attribute_name_28     int,
+    attribute_name_29     int,
+    attribute_name_30     int
+);
+
+-- NOTE --- photos has no primary unique key !!!! 
+
+CREATE TABLE photos (
+    name                            text,
+    url                                 text,
+    height                            int,  
+    width                              int,
+    alt_tag                          text,
+    source_url                    text,  -- this is a url 
+    source_text                  text,
+);
+
+CREATE TABLE crowd_type (
+    name                            text,  -- primary key 
+    type1                            int,
+    type2                            int,
+    type3                            int,
+    type4                            int,
+    type5                            int,
+    type6                            int,
+    type7                            int,
+    type8                            int,
+    type9                            int,
+    type10                          int,
+); 
+
+
+
+
+
+
+
+

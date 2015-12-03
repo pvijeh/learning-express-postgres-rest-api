@@ -64,6 +64,9 @@ function validatePhoto(req, res, next) {
 
 var photoRouter = express.Router();
 
+
+// get method for retrieving data from DB
+
 photoRouter.get('/', function(req, res) {
   var page = parseInt(req.query.page, 10);
   if (isNaN(page) || page < 1) {
@@ -107,6 +110,8 @@ photoRouter.get('/', function(req, res) {
   });
 });
 
+
+// post method for inserting new data into DB 
 photoRouter.post('/', multer({
   dest: './uploads/',
   rename: function(field, filename) {
@@ -147,9 +152,12 @@ photoRouter.post('/', multer({
     });
   });
 });
+
+
 photoRouter.get('/:id([0-9]+)', lookupPhoto, function(req, res) {
   res.json(req.photo);
 });
+
 photoRouter.patch('/:id([0-9]+)', function(req, res) { });
 app.use('/photo', photoRouter);
 
