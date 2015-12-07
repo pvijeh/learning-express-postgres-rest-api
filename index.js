@@ -14,7 +14,7 @@ var postgres = require('./lib/postgres');
 
 function lookupPhoto(req, res, next) {
   var photoId = req.params.id;
-  var sql = 'SELECT * FROM photo WHERE id = $1';
+  var sql = 'SELECT * FROM venues WHERE id = $1';
   postgres.client.query(sql, [ photoId ], function(err, results) {
     if (err) {
       console.error(err);
@@ -82,7 +82,7 @@ photoRouter.get('/', function(req, res) {
     limit = 1;
   }
 
-  var sql = 'SELECT count(1) FROM photo';
+  var sql = 'SELECT count(1) FROM venues';
   postgres.client.query(sql, function(err, result) {
     if (err) {
       console.error(err);
@@ -95,7 +95,7 @@ photoRouter.get('/', function(req, res) {
     var count = parseInt(result.rows[0].count, 10);
     var offset = (page - 1) * limit;
 
-    sql = 'SELECT * FROM photo OFFSET $1 LIMIT $2';
+    sql = 'SELECT * FROM venues OFFSET $1 LIMIT $2';
     postgres.client.query(sql, [offset, limit], function(err, result) {
       if (err) {
         console.error(err);
@@ -132,14 +132,14 @@ photoRouter.post('/', multer({
   postgres.client.query(sql, data, function(err, result) {
     if (err) {
       console.error(err);
-      res.statusCode = 500;
+      res.statusCode = 500;f
       return res.json({
         errors: ['Could not create photo']
       });
     }
 
     var photoId = result.rows[0].id;
-    var sql = 'SELECT * FROM photo WHERE id = $1';
+    var sql = 'SELECT * FROM venues WHERE id = $1';
     postgres.client.query(sql, [ photoId ], function(err, result) {
       if (err) {
         console.error(err);

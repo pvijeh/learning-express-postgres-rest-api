@@ -1,14 +1,17 @@
 CREATE TABLE venues (
-    name                            text,  -- primary key 
+    id                                   int,
+    name                            text,  
     votes                             int,
     visits                             int,  
     street_address            text,
     neighborhood             text,
-    date_added                date
+    date_added                date,
+    PRIMARY                   KEY(id)
 );
 
 CREATE TABLE best_lists (
-    name                            text,    -- primary key 
+    id                                  int,
+    name                            text,     
     attribute_name_1       int,
     attribute_name_2       int,  
     attribute_name_3       int,
@@ -38,23 +41,27 @@ CREATE TABLE best_lists (
     attribute_name_27     int,
     attribute_name_28     int,
     attribute_name_29     int,
-    attribute_name_30     int
+    attribute_name_30     int, 
+    PRIMARY                   KEY(id)
 );
 
 -- NOTE --- photos has no primary unique key !!!! 
 
 CREATE TABLE photos (
+    id                                    int, 
     name                            text,
     url                                 text,
     height                            int,  
     width                              int,
     alt_tag                          text,
     source_url                    text,  -- this is a url 
-    source_text                  text,
+    source_text                  text, 
+    PRIMARY                   KEY(id)
 );
 
 CREATE TABLE crowd_type (
-    name                            text,  -- primary key 
+    id                                    int, 
+    name                            text, 
     type1                            int,
     type2                            int,
     type3                            int,
@@ -64,8 +71,67 @@ CREATE TABLE crowd_type (
     type7                            int,
     type8                            int,
     type9                            int,
-    type10                          int,
+    type10                          int, 
+    PRIMARY                   KEY(id)
 ); 
+
+INSERT INTO venues VALUES ( 1, 'name1', 1, 2, 'street address', 'neighborhood', '1999-Jan-08');
+INSERT INTO venues VALUES ( 2, 'name2', 1, 2, 'street address', 'neighborhood', '1999-Jan-08');
+INSERT INTO venues VALUES ( 3, 'name3', 1, 2, 'street address', 'neighborhood', '1999-Jan-08');
+INSERT INTO venues VALUES ( 4, 'name4', 1, 2, 'street address', 'neighborhood', '1999-Jan-08');
+INSERT INTO venues VALUES ( 5, 'name5', 1, 2, 'street address', 'neighborhood', '1999-Jan-08');
+INSERT INTO venues VALUES ( 6, 'name6', 1, 2, 'street address', 'neighborhood', '1999-Jan-08');
+INSERT INTO venues VALUES ( 7, 'name7', 1, 2, 'street address', 'neighborhood', '1999-Jan-08');
+INSERT INTO venues VALUES ( 8, 'name8', 1, 2, 'street address', 'neighborhood', '1999-Jan-08');
+INSERT INTO venues VALUES ( 9, 'name9', 1, 2, 'street address', 'neighborhood', '1999-Jan-08');
+INSERT INTO venues VALUES ( 10, 'name10', 1, 2, 'street address', 'neighborhood', '1999-Jan-08');
+
+INSERT INTO venues VALUES ( 11, 'name11', 1, 2, 'street address', 'neighborhood', '1999-Jan-08');
+INSERT INTO venues VALUES ( 12, 'name12', 1, 2, 'street address', 'neighborhood', '1999-Jan-08');
+INSERT INTO venues VALUES ( 13, 'name13', 1, 2, 'street address', 'neighborhood', '1999-Jan-08');
+INSERT INTO venues VALUES ( 14, 'name14', 1, 2, 'street address', 'neighborhood', '1999-Jan-08');
+INSERT INTO venues VALUES ( 15, 'name15', 1, 2, 'street address', 'neighborhood', '1999-Jan-08');
+INSERT INTO venues VALUES ( 16, 'name16', 1, 2, 'street address', 'neighborhood', '1999-Jan-08');
+INSERT INTO venues VALUES ( 17, 'name17', 1, 2, 'street address', 'neighborhood', '1999-Jan-08');
+INSERT INTO venues VALUES ( 18, 'name18', 1, 2, 'street address', 'neighborhood', '1999-Jan-08');
+INSERT INTO venues VALUES ( 19, 'name19', 1, 2, 'street address', 'neighborhood', '1999-Jan-08');
+INSERT INTO venues VALUES ( 20, 'name20', 1, 2, 'street address', 'neighborhood', '1999-Jan-08');
+
+
+INSERT INTO best_lists VALUES(
+    1,
+    name1,     
+    429,
+    382,
+    468,
+    421,
+    63,
+    405,
+    415,
+    38,
+    124,
+    70,
+    288,
+    18,
+    461,
+    186,
+    49,
+    262,
+    160,
+    158,
+    31,
+    144,
+    97,
+    350,
+    204,
+    277,
+    238,
+    494,
+    483,
+    158,
+    216,
+    326
+);
 
 
 
